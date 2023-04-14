@@ -19,25 +19,5 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
-        binding.buttonTeamA1.setOnClickListener {
-            viewModel.incrementScoreA()
-        }
-
-        binding.buttonTeamA2.setOnClickListener {
-            viewModel.incrementScoreA(2)
-        }
-
-        binding.buttonTeamB1.setOnClickListener {
-            viewModel.incrementScoreB()
-        }
-
-        binding.buttonTeamB2.setOnClickListener {
-            viewModel.incrementScoreB(2)
-        }
-
-        binding.buttonReset.setOnClickListener {
-            viewModel.reset()
-        }
     }
 }
