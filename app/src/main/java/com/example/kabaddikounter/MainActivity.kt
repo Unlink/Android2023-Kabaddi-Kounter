@@ -19,9 +19,6 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
 
-        binding.scoreA.text = viewModel.scoreA.toString()
-        binding.scoreB.text = viewModel.scoreB.toString()
-
         binding.buttonTeamA1.setOnClickListener {
             viewModel.incrementScoreA()
             binding.scoreA.text = viewModel.scoreA.toString()
