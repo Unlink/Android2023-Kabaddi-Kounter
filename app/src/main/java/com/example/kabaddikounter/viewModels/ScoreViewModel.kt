@@ -7,19 +7,24 @@ import androidx.lifecycle.ViewModel
 
 
 class ScoreViewModel : ViewModel() {
-    var scoreA : Int = 2
-    var scoreB : Int = 0
+    private val _scoreA = MutableLiveData<Int>(0)
+    val scoreA: LiveData<Int>
+        get() = _scoreA
+
+    private val _scoreB = MutableLiveData<Int>(0)
+    val scoreB: LiveData<Int>
+        get() = _scoreB
 
     fun incrementScoreA(points: Int = 1) {
-        scoreA+=points
+        _scoreA.value = _scoreA.value!! + points
     }
 
     fun incrementScoreB(points: Int = 1) {
-        scoreB+=points
+        _scoreB.value = _scoreB.value!! + points
     }
 
     fun reset() {
-        scoreA = 0;
-        scoreB = 0;
+        _scoreA.value = 0;
+        _scoreB.value = 0;
     }
 }

@@ -18,31 +18,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         binding.buttonTeamA1.setOnClickListener {
             viewModel.incrementScoreA()
-            binding.scoreA.text = viewModel.scoreA.toString()
         }
 
         binding.buttonTeamA2.setOnClickListener {
             viewModel.incrementScoreA(2)
-            binding.scoreA.text = viewModel.scoreA.toString()
         }
 
         binding.buttonTeamB1.setOnClickListener {
             viewModel.incrementScoreB()
-            binding.scoreB.text = viewModel.scoreB.toString()
         }
 
         binding.buttonTeamB2.setOnClickListener {
             viewModel.incrementScoreB(2)
-            binding.scoreB.text = viewModel.scoreB.toString()
         }
 
         binding.buttonReset.setOnClickListener {
             viewModel.reset()
-            binding.scoreA.text = viewModel.scoreA.toString()
-            binding.scoreB.text = viewModel.scoreB.toString()
         }
     }
 }
