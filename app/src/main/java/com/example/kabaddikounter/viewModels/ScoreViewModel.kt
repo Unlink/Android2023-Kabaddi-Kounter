@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 
 
 class ScoreViewModel : ViewModel() {
+    val textExample =  MutableLiveData<String>("test")
+
     private val _scoreA = MutableLiveData<Int>(0)
     val scoreA: LiveData<Int>
         get() = _scoreA
